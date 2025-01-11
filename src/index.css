@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.autoplay-progress {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  z-index: 10;
+}
+
+.autoplay-progress svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.autoplay-progress circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+.autoplay-progress circle:first-child {
+  stroke: #e5e7eb; /* Background circle */
+}
+
+.autoplay-progress circle:last-child {
+  stroke: #2563eb; /* Active progress circle */
+  stroke-dasharray: 126; /* 2πr (for r=20) */
+  stroke-dashoffset: calc(126 * var(--progress));
+  transition: stroke-dashoffset 0.3s linear;
+}
+
+.autoplay-progress span {
+  position: absolute;
+  font-size: 12px;
+  color: #2563eb;
+  font-weight: bold;
+}
