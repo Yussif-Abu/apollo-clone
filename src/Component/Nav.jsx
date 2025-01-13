@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from "react";
 import { navLinks } from "../Constants";
-import apollo247 from '../assets/icons/apollo247.svg';
-import Button from './Button';
-import user from '../assets/icons/user.svg';
+import { FaBars, FaTimes } from "react-icons/fa"; // Import icons for menu toggle
+import apollo247 from "../assets/icons/apollo247.svg";
+import Button from "./Button";
+import user from "../assets/icons/user.svg";
 
 const Nav = ({ isScrolled }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle the menu
+
   return (
     <nav className="bg-white border-b shadow-md flex flex-col mb-5">
       {/* Top Section */}
-      <div className="px-20 flex items-center justify-between py-2">
+      <div className="px-5 md:px-20 flex items-center justify-between py-2">
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <a href="/" className="flex-shrink-0">
@@ -22,13 +25,28 @@ const Nav = ({ isScrolled }) => {
           </a>
         </div>
         {/* Login Button */}
-        <Button label="Login" iconURL={user} />
+        <div className="hidden md:block">
+          <Button label="Login" iconURL={user} />
+        </div>
+        {/* Menu Toggle Button */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-gray-700 text-2xl focus:outline-none"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
       {/* Separator Line */}
       <div className="border-t border-gray-200"></div>
 
       {/* Navigation Links */}
-      <ul className="flex space-x-6 items-center justify-center gap-6 py-2">
+      <ul
+        className={`flex flex-col md:flex-row md:space-x-6 items-center justify-center gap-6 py-2 transition-all duration-300 ${
+          isMenuOpen ? "max-h-screen" : "max-h-0 overflow-hidden md:max-h-full"
+        }`}
+      >
         {navLinks.map((item, index) => (
           <li
             key={index}
@@ -50,6 +68,10 @@ const Nav = ({ isScrolled }) => {
             )}
           </li>
         ))}
+        {/* Login Button for Mobile */}
+        <li className="md:hidden">
+          <Button label="Login" iconURL={user} />
+        </li>
       </ul>
     </nav>
   );

@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <section className="flex py-10 ">
-    <div className="container mx-auto">
+    <div className="container ">
       {/* Introduction Section */}
       <div className="mb-8">
         <h1 className="text-md font-bold mb-4">

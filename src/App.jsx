@@ -20,7 +20,7 @@ function App() {
   return (
     <>
     <Nav />
-    <main className='relative overflow-x-hidden px-10'>
+    <main className='relative overflow-x-hidden px-5'>
       <Hero/>
       <Products/>
       <Test/>
