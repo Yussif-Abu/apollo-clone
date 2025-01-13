@@ -4,8 +4,8 @@ import Trust from './Trust'
 
 const Blog = () => {
   return (
-    <section className="flex mb-10">
-      <div className="container mx-auto">
+    <section className="flex w-full mb-10">
+      <div className="container ">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold">Blogs and Articles for You (30)</h2>
           <a href="#" className="text-blue-500 font-medium">

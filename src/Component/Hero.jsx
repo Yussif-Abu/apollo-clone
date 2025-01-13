@@ -5,7 +5,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col gap-6 items-center justify-center w-full px-4 md:px-8">
+    <section className="flex flex-col gap-6 items-center justify-center w-full  ">
       {/* Slider */}
       <div className="w-full rounded-xl shadow-md mb-10">
         <CustomSwiper

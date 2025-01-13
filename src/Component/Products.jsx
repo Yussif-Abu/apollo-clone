@@ -5,7 +5,7 @@ import { Circle_Banner } from '../assets/images';
 const Products = () => {
 
   return (
-    <div className="flex flex-col gap-6 w-full px-4 md:px-8 mb-10">
+    <div className="flex flex-col gap-6 w-full  mb-10">
     {/* Banner */}
     <img
        src={Circle_Banner}
