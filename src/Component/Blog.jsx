@@ -4,15 +4,15 @@ import Trust from './Trust'
 
 const Blog = () => {
   return (
-    <section className="flex w-full mb-10">
-      <div className="container ">
+    <section className="flex mb-10">
+      <div className="flex flex-col w-full ">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-semibold">Blogs and Articles for You (30)</h2>
           <a href="#" className="text-blue-500 font-medium">
             View All
           </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-6">
           {blogs.map((blog, index) => (
             <div
               key={index}

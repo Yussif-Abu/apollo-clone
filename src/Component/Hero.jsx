@@ -5,14 +5,14 @@ import { IoIosArrowForward } from 'react-icons/io';
 
 const Hero = () => {
   return (
-    <section className="flex flex-col gap-6 items-center justify-center w-full  ">
+    <section className="flex flex-col gap-6 items-center justify-center w-full">
       {/* Slider */}
       <div className="w-full rounded-xl shadow-md mb-10">
         <CustomSwiper
           slides={slidesData.map((slide) => (
             <div
               key={slide.id}
-              className={`flex flex-col items-center justify-center h-48 md:h-50 lg:h-70 ${slide.bgColor} rounded-lg`}
+              className={`flex w-full items-center justify-center h-48 md:h-50 lg:h-70 ${slide.bgColor} rounded-lg`}
             >
               <img
                 src={slide.img}
